@@ -56,7 +56,7 @@ minima:
 theme: minima
 
 # 分页
-paginate: 8
+paginate: 6
 
 plugins:
  - jekyll-feed
