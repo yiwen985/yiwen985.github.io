@@ -58,6 +58,13 @@ theme: minima
 # 分页
 paginate: 6
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
