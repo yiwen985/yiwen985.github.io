@@ -52,14 +52,6 @@ layout: default
         {%- else %}
           <li><div class="pager-edge">•</div></li>
         {%- endif %}
-        {% if paginator.total_pages > 3 %}
-          <li>
-            <div>共{{ paginator.total_pages }}页</div>
-          </li>
-          <li>
-            <div>跳至 <input type="number" class="jump-pager-input" min="1" onkeydown="jumpPage(event, this.value);"> 页</div>
-          </li>
-        {% endif %}
         </ul>
       </div>
     {%- endif %}
