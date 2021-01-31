@@ -16,9 +16,16 @@
 
 #search_box {
     color: $text-color;
-    width: 250px;
+    width: 100px;
     margin: auto;
 }
+
+@media screen and (min-width: 471px) {
+    #search_box {
+        width: 250px;
+    }
+}
+
 
 #search_box input {
     width: 100%;
