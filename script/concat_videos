@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# 合并视频
+# 参数为多个相同格式的视频文件
+
+dest_dir=/home/sss/Desktop/
+dest_filename="$1" # 我的需求：合并的视频文件名称为第一个视频文件的名称
+
+if (( $# < 2 ))  #参数个数小于 2，即视频文件个数小于 2 时退出
+then
+    exit 2
+fi
+
+touch -f tmp_concat
+IFS="," #分隔符，执行脚本不会改变原有环境的变量
+for file in $@
+do
+    echo file \'"$file"\' >> tmp_concat #加引号：防止文件名中有空格
+done
+
+dest="$dest_dir$dest_filename"
+
+ffmpeg -f concat -safe 0 -i tmp_concat -c copy -y $dest
+
+rm tmp_concat
