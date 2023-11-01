@@ -1,0 +1,11 @@
+[Unit]
+Description=clash meta Daemon
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=clash-meta -d /home/sss/.local/clash-meta/
+
+[Install]
+WantedBy=multi-user.target
