@@ -37,6 +37,7 @@
 }
 
 .tooltipped:hover:before, .tooltipped:hover:after, .tooltipped:active:before, .tooltipped:active:after, .tooltipped:focus:before, .tooltipped:focus:after {
+	position: relative;
 	display: inline-block;
 	text-decoration: none
 }
