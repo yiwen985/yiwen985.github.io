@@ -256,7 +256,7 @@ aside:
     page: false
     # 开启后不悬停目录有模糊效果
     # After opening, there is a fuzzy effect without hovering over the directory
-    vague: true
+    vague: false
 
   # 侧边栏文章列表
   # Sidebar article list
@@ -841,8 +841,8 @@ console:
 # 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
 # Only need to fill in the verification code, such as: codeva-KReTIJu5us
 verify_site:
-# - name: google-site-verification
-#   content: xxxxxx
+  - name: google-site-verification
+    content: Fkg3OxPZq4WvYxPCsdnYbdKf-WpCDIsH3A8RaZH9qTk
 # - name: baidu-site-verification
 #   content: xxxxxxx
 

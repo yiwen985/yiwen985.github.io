@@ -1,6 +1,7 @@
 ---
 title: hexo solitude主题博客搭建并部署到gitpages
 categories: 技术
+date: 2024-07-23
 ---
 [文档](https://solitude.js.org/guide/quick-start.html)、[预览](https://everfu.github.io/Solitude/)
 
