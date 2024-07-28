@@ -2,6 +2,7 @@
 title: hexo solitude主题博客搭建并部署到gitpages
 categories: 技术
 date: 2024-07-23
+updated: 2024-07-28
 ---
 [文档](https://solitude.js.org/guide/quick-start.html)、[预览](https://everfu.github.io/Solitude/)
 
@@ -48,4 +49,13 @@ waline: # https://waline.js.org/
 视频教程：[Waline部署教程（快速上手）](https://www.bilibili.com/video/BV1pB4y1E7fp)
 
 ## 部署
+{% subtabs 部署 %}
+<!-- tab 部署到 git pages -->
 将 test 文件夹中所有内容移动到 github 仓库下，根据 [hexo 文档](https://hexo.io/zh-cn/docs/github-pages)进行部署
+<!-- endtab-->
+<!-- tab 部署到 cloudflare pages -->
+创建应用程序 - 选择 Pages - 连接到 Git。
+构建命令：`npm install hexo-cli -g; mkdir public; hexo generate`
+构建输出目录：`/public`
+<!-- endtab-->
+{% endsubtabs %}

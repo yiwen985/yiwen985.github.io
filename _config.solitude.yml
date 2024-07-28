@@ -221,7 +221,7 @@ aside:
     # - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
     information: # 样式为1时请不要超过4个
-    # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
+      Github: https://github.com/yiwen985/ || st-github-line # 名称：链接 || 图标 / Name: link || icon
     # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
 
   # 二维码
@@ -349,13 +349,13 @@ post:
   # 顶部文章简介
   # Top article introduction
   meta:
-    date: false # 发布日期 / Release date
-    updated: false # 更新日期 / Update date
+    date: true # 发布日期 / Release date
+    updated: true # 更新日期 / Update date
     locate: false # 位置 / Location
-    wordcount: false # 字数 / Number of words
-    readtime: false # 访问 / uv
-    pv: false # 浏览量 / pv
-    comment: false # 评论数 / Comment count
+    wordcount: true # 字数 / Number of words
+    readtime: true # 访问 / uv
+    pv: true # 浏览量 / pv
+    comment: true # 评论数 / Comment count
   # 打赏
   # reward
   award:
@@ -662,16 +662,16 @@ highlight:
 # image lightbox
 # warning：开启前下方的fancybox或mediumZoom必须打开一个
 # warning: One of the fancybox or mediumZoom below must be turned on before turning on
-lightbox: false
+lightbox: true
 # fancybox
 # https://fancyapps.com/fancybox/
-fancybox: false
+fancybox: true
 # mediumZoom
 mediumZoom: false
 
 # mermaid tags plugin
 # https://mermaid.js.org/
-mermaid: false
+mermaid: true
 
 # Open Graph
 # https://ogp.me/
@@ -842,7 +842,7 @@ console:
 # Only need to fill in the verification code, such as: codeva-KReTIJu5us
 verify_site:
   - name: google-site-verification
-    content: Fkg3OxPZq4WvYxPCsdnYbdKf-WpCDIsH3A8RaZH9qTk
+    content: 1TmHjb656_A6qp3piH4ZbuPQ8fa2Q-bQfW2HH1VdJ40
 # - name: baidu-site-verification
 #   content: xxxxxxx
 
