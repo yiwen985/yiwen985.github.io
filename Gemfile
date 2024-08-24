@@ -9,3 +9,5 @@ gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
 gem 'jekyll-toc'
 gem "tzinfo"
 gem 'tzinfo-data'
+
+gem "wdm", "~> 0.2.0"
