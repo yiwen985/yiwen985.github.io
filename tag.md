@@ -2,6 +2,7 @@
 layout: page
 title: 标签
 permalink: /tag/
+sitemap: false
 ---
 
 {% for tag in site.tags %}

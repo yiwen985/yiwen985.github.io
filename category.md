@@ -2,6 +2,7 @@
 layout: page
 title: 分类
 permalink: /category/
+sitemap: false
 ---
 
 {% comment %}

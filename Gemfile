@@ -11,3 +11,5 @@ gem "tzinfo"
 gem 'tzinfo-data'
 
 gem "wdm", "~> 0.2.0"
+
+gem "jekyll-sitemap", "~> 1.4"

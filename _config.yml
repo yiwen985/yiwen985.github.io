@@ -24,6 +24,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-toc
+  - jekyll-sitemap
 
 # Theme-specific settings
 
