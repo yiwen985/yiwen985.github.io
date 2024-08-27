@@ -17,5 +17,3 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
-
-如需搜索，请去 github 搜索，或利用谷歌搜索。

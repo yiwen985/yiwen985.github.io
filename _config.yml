@@ -78,6 +78,8 @@ minima:
 
 timezone: Asia/Shanghai
 google_analytics: G-73TYVMVJRZ
+disqus:
+  shortname: yiwen985
 show_excerpts: true # 显示摘要
 permalink: /:title
 
@@ -90,6 +92,7 @@ defaults:
       layout: "post"
       toc: false # 默认关目录
       categories: 未分类
+      comments: true
 
 kramdown:
   input: GFM
