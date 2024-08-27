@@ -31,6 +31,7 @@ plugins:
 # If you want to link only specific pages in your header, use this and add the path to the pages
 # in order as they should show up.
 header_pages:
+  - search.md
   - category.md  # category 会合并全局的变量，导致重复
   - tag.md
   - about.md
