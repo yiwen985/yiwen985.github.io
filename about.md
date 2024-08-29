@@ -17,3 +17,12 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
+
+liquid:
+- [Truthy and falsy](https://shopify.github.io/liquid/basics/truthy-and-falsy/)
+- [Types](https://shopify.github.io/liquid/basics/types/)
+- [Operators](https://shopify.github.io/liquid/basics/operators/)
+- [Whitespace control](https://shopify.github.io/liquid/basics/whitespace/): 带 - 如 {{ "{{" | escape }} username -}} 不会打印空行
+- Filters：reverse
+
+[jekyll-spaceship](https://github.com/jeffreytse/jekyll-spaceship): 支持 table, mathjax, plantuml, mermaid, emoji, video, audio, youtube, vimeo, dailymotion, soundcloud, spotify 等。
