@@ -27,6 +27,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-archives
 
 # Theme-specific settings
 
@@ -34,8 +35,7 @@ plugins:
 # in order as they should show up.
 header_pages:
   - search.md
-  - category.md  # category 会合并全局的变量，导致重复
-  - tag.md
+  - archive.md
   - about.md
 
 # Set to `true` to show excerpts on the homepage.
@@ -95,8 +95,9 @@ defaults:
     values:
       layout: "post"
       toc: false # 默认关目录
-      categories: 未分类
+      # categories: 未分类
       comments: true
+      sticky: false
 
 kramdown:
   input: GFM
@@ -163,3 +164,19 @@ jekyll-spaceship:
     css:
       class: emoji
     src: https://github.githubassets.com/images/icons/emoji/
+
+jekyll-archives:
+  enabled: all
+  # layout: archive
+  layouts:
+    year: year-archive
+    month: month-archive
+    # day: day-archive
+    category: archive
+    tag: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'

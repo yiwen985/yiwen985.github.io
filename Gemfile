@@ -17,3 +17,5 @@ gem "jekyll-sitemap", "~> 1.4"
 gem "jekyll-paginate", "~> 1.1"
 
 gem "jekyll-spaceship", "~> 0.10.2"
+
+gem "jekyll-archives", "~> 2.2"
