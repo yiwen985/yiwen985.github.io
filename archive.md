@@ -28,12 +28,12 @@ sitemap: false
 ## 分类
 
 {% for category in site.categories -%}
-  <a href="{{ site.baseurl }}/category/{{ category[0] }}" class="button">{{ category[0] }}</a>
+  <a href="{{ '/category/' | append: category[0] | relative_url }}" class="button">{{ category[0] }}</a>
 {%- endfor %}
 
 
 ## 标签
 
 {% for tag in site.tags -%}
-  <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="button">{{ tag[0] }}</a>
+  <a href="{{ '/category/' | append: tag[0] | relative_url }}" class="button">{{ tag[0] }}</a>
 {%- endfor -%}
