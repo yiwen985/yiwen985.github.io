@@ -28,7 +28,7 @@ layout: base
       {% assign sticky_posts = posts | where: "sticky", true %}
       {%- for post in sticky_posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <span class="post-meta">{{ post.modified_date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
@@ -44,7 +44,7 @@ layout: base
       {% assign non_sticky_posts = posts | where: "sticky", false  %}
       {%- for post in non_sticky_posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <span class="post-meta">{{ post.modified_date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}

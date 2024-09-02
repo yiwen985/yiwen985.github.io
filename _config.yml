@@ -95,7 +95,6 @@ defaults:
     values:
       layout: "post"
       toc: false # 默认关目录
-      # categories: 未分类
       comments: true
       sticky: false
 
@@ -166,17 +165,20 @@ jekyll-spaceship:
     src: https://github.githubassets.com/images/icons/emoji/
 
 jekyll-archives:
-  enabled: all
-  # layout: archive
+  enabled:
+    - categories
+    - tags
   layouts:
-    year: year-archive
-    month: month-archive
-    # day: day-archive
     category: archive
     tag: archive
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    # day: '/:year/:month/:day/'
     tag: '/tag/:name/'
     category: '/category/:name/'
+
+# 创建文章：jekyll post 文章名
+jekyll_compose:
+  default_front_matter:
+    posts:
+      layout: "post"
+      categories: "技术"
+      excerpt: 摘要
