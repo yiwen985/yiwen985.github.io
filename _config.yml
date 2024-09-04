@@ -97,6 +97,7 @@ defaults:
       toc: false # 默认关目录
       comments: true
       sticky: false
+      auto-number-title: true
 
 kramdown:
   input: GFM

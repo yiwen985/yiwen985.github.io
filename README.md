@@ -7,8 +7,9 @@ Front Matter
 - comments: true 默认开启评论
 - modified_date：更新日期，默认与文章日期一样
 - sticky: 置顶文章，默认false
+- auto-number-title: true 标题编号，默认打开
 
-## TODO
+## Features
 
 - [x] 搜索
 - [x] 评论

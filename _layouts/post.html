@@ -25,6 +25,10 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
+    
+    {%- if page.auto-number-title -%}
+      <link rel="stylesheet" href="{{ "/assets/css/auto-number-title.css" | relative_url }}">
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
