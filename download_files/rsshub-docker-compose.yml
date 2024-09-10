@@ -1,0 +1,58 @@
+services:
+    rsshub:
+        # two ways to enable puppeteer:
+        # * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled
+        # * (consumes more disk space and memory) leave everything unchanged
+        image: diygod/rsshub
+        restart: always
+        network_mode: "host"
+        environment:
+            NODE_ENV: production
+            CACHE_TYPE: redis
+            REDIS_URL: "redis://redis:6379/"
+            PUPPETEER_WS_ENDPOINT: "ws://browserless:3000" # marked
+            # PROXY_URI: 'http://localhost:10809' # 配置代理
+            BILIBILI_COOKIE_{uid}: ''
+            TWITTER_USERNAME: ''
+            TWITTER_PASSWORD: ''
+            TWITTER_AUTH_TOKEN: ''
+            WEIBO_COOKIES: ''
+            HOTLINK_TEMPLATE: 'https://i3.wp.com/$${host}$${pathname}' # 代替微博图片链接
+            HOTLINK_INCLUDE_PATHS: '/weibo'
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:1200/healthz"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+        depends_on:
+            - redis
+            - browserless # marked
+
+    browserless: # marked
+        image: browserless/chrome # marked
+        restart: always # marked
+        network_mode: "host"
+        ulimits: # marked
+            core: # marked
+                hard: 0 # marked
+                soft: 0 # marked
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:3000/pressure"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+
+    redis:
+        image: redis:alpine
+        restart: always
+        volumes:
+            - redis-data:/data
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+            start_period: 5s
+
+volumes:
+    redis-data:
