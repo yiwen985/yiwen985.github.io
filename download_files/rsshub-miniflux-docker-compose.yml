@@ -5,19 +5,20 @@ services:
         # * (consumes more disk space and memory) leave everything unchanged
         image: diygod/rsshub
         restart: always
-        network_mode: "host"
+        ports:
+            - "1200:1200"
         environment:
             NODE_ENV: production
             CACHE_TYPE: redis
             REDIS_URL: "redis://redis:6379/"
             PUPPETEER_WS_ENDPOINT: "ws://browserless:3000" # marked
-            # PROXY_URI: 'http://localhost:10809' # 配置代理
+            # PROXY_URI: 'http://172.17.0.1:10809' # 代理
             BILIBILI_COOKIE_{uid}: ''
             TWITTER_USERNAME: ''
             TWITTER_PASSWORD: ''
             TWITTER_AUTH_TOKEN: ''
             WEIBO_COOKIES: ''
-            HOTLINK_TEMPLATE: 'https://i3.wp.com/$${host}$${pathname}' # 代替微博图片链接
+            HOTLINK_TEMPLATE: 'https://i3.wp.com/$${host}$${pathname}'
             HOTLINK_INCLUDE_PATHS: '/weibo'
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost:1200/healthz"]
@@ -31,7 +32,6 @@ services:
     browserless: # marked
         image: browserless/chrome # marked
         restart: always # marked
-        network_mode: "host"
         ulimits: # marked
             core: # marked
                 hard: 0 # marked
@@ -54,5 +54,34 @@ services:
             retries: 5
             start_period: 5s
 
+    miniflux:
+        image: miniflux/miniflux:latest
+        restart: always
+        ports:
+            - "12345:8080"
+        depends_on:
+            db:
+                condition: service_healthy
+        environment:
+            - DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable 
+            - RUN_MIGRATIONS=1
+            - CREATE_ADMIN=1
+            - ADMIN_USERNAME=<用户名>
+            - ADMIN_PASSWORD=<密码>
+    db:
+        image: postgres:15
+        restart: always
+        environment:
+            - POSTGRES_USER=miniflux
+            - POSTGRES_PASSWORD=secret
+            - POSTGRES_DB=miniflux
+        volumes:
+            - miniflux-db:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD", "pg_isready", "-U", "miniflux"]
+            interval: 10s
+            start_period: 30s
+
 volumes:
     redis-data:
+    miniflux-db:
