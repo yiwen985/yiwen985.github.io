@@ -68,6 +68,10 @@ services:
             - CREATE_ADMIN=1
             - ADMIN_USERNAME=<用户名>
             - ADMIN_PASSWORD=<密码>
+            # - HTTP_PROXY=http://172.17.0.1:10809     # 代理
+            # - HTTPS_PROXY=http://172.17.0.1:10809    # 代理
+            # - NO_PROXY=localhost,127.0.0.1,rsshub,db # 代理
+
     db:
         image: postgres:15
         restart: always
