@@ -71,6 +71,12 @@ services:
             # - HTTP_PROXY=http://172.17.0.1:10809     # 代理
             # - HTTPS_PROXY=http://172.17.0.1:10809    # 代理
             # - NO_PROXY=localhost,127.0.0.1,rsshub,db # 代理
+            - TZ=Asia/Shanghai
+            - LOG_DATE_TIME=true            # 日志配上时间
+            - POLLING_PARSING_ERROR_LIMIT=0 # 更新源错误达到n次需要手动更新，n为0时表示不限制
+            - FORCE_REFRESH_INTERVAL=0      # 多久才能强制刷新（强制刷新时间限制），0表示不限制
+            - POLLING_FREQUENCY=5
+            - SCHEDULER_ROUND_ROBIN_MIN_INTERVAL=5
 
     db:
         image: postgres:15
