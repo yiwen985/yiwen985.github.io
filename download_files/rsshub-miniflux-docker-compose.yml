@@ -12,7 +12,7 @@ services:
             CACHE_TYPE: redis
             REDIS_URL: "redis://redis:6379/"
             PUPPETEER_WS_ENDPOINT: "ws://browserless:3000" # marked
-            # PROXY_URI: 'http://172.17.0.1:10809' # 代理
+            # PROXY_URI: 'http://172.17.0.1:10809' # 代理，172.17.0.1 表示宿主机 ip
             BILIBILI_COOKIE_{uid}: ''
             TWITTER_USERNAME: ''
             TWITTER_PASSWORD: ''
@@ -56,7 +56,7 @@ services:
 
     miniflux:
         image: miniflux/miniflux:latest
-        restart: always
+        restart: unless-stopped
         ports:
             - "12345:8080"
         depends_on:
@@ -77,10 +77,12 @@ services:
             - FORCE_REFRESH_INTERVAL=0      # 多久才能强制刷新（强制刷新时间限制），0表示不限制
             - POLLING_FREQUENCY=5
             - SCHEDULER_ROUND_ROBIN_MIN_INTERVAL=5
+            - CLEANUP_ARCHIVE_READ_DAYS=7
+            - CLEANUP_ARCHIVE_UNREAD_DAYS=7
 
     db:
         image: postgres:15
-        restart: always
+        restart: unless-stopped
         environment:
             - POSTGRES_USER=miniflux
             - POSTGRES_PASSWORD=secret
