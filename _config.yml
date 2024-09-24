@@ -36,6 +36,7 @@ plugins:
 header_pages:
   - search.md
   - archive.md
+  - tool.md
   - about.md
 
 # Set to `true` to show excerpts on the homepage.
