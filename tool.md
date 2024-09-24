@@ -4,8 +4,6 @@ title: 工具
 permalink: /tool/
 sitemap: false
 ---
-
-## 数据传输计算器
 <!-- CHATGPT -->
 <style>
     .container {
@@ -45,21 +43,38 @@ sitemap: false
     }
 </style>
 
+## 数据传输计算器
+
 <div class="container">
-    <label for="fileSize">文件大小:</label>
-    <input type="number" id="fileSize" placeholder="输入文件大小">
-    <select id="fileSizeUnit">
-        <option value="MB">MB</option>
-        <option value="GB" selected>GB</option>
-    </select>
-
-    <label for="bandwidth">带宽 (Mbps):</label>
-    <input type="number" id="bandwidth" placeholder="输入带宽">
-
-    <button onclick="calculateTransferTime()">计算传输时间</button>
-
-    <div class="result" id="result"></div>
+    <form id="calculateTransferTime-form" onsubmit="return calculateTransferTime()">
+        <label for="fileSize">文件大小:</label>
+        <input type="number" id="fileSize" placeholder="输入文件大小">
+        <select id="fileSizeUnit">
+            <option value="MB">MB</option>
+            <option value="GB" selected>GB</option>
+        </select>
+        <label for="bandwidth">带宽 (Mbps):</label>
+        <input type="number" id="bandwidth" placeholder="输入带宽">
+        <button onclick="calculateTransferTime()">计算传输时间</button>
+    </form>
+    <div class="result" id="calculateTransferTime_result"></div>
 </div>
+
+## 计算器
+
+参考 [math.js](https://mathjs.org/)，例如：
+- sin(90 deg)
+- 5.08 cm + 2 inch
+- f(x, y) = x ^ y; f(2,3)
+
+<div class="container">
+    <form id="calculator-form" onsubmit="return calculate()">
+        <input type="text" id="math_expression" class="display" placeholder="输入数学表达式">
+        <button onclick="calculate()">计算结果</button>
+    </form>
+    <div class="result" id="calculate_result"></div>
+</div>
+
 
 <script>
 function calculateTransferTime() {
@@ -81,13 +96,30 @@ function calculateTransferTime() {
         var transferTimeInMinutes = transferTimeInSeconds / 60;
         var transferTimeInHours   = transferTimeInMinutes / 60;
 
-        document.getElementById('result').innerHTML = 
+        document.getElementById('calculateTransferTime_result').innerHTML = 
             '传输时间: <br>' + 
             transferTimeInHours.toFixed(1) + ' 时 <br>' + 
             transferTimeInMinutes.toFixed(1) + ' 分钟 <br>' + 
-            transferTimeInSeconds.toFixed(2) + ' 秒';
+            transferTimeInSeconds.toFixed(1) + ' 秒';
     } else {
-        document.getElementById('result').innerHTML = '请填写所有字段。';
+        document.getElementById('calculateTransferTime_result').innerHTML = '请填写所有字段。';
     }
+    return false;
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.1/math.min.js"></script>
+<script>
+function calculate() {
+    let math_expression = document.getElementById('math_expression');
+    let resultBox = document.getElementById('calculate_result');
+    let expression = math_expression.value;
+    try {
+        let result = math.evaluate(expression);
+        resultBox.innerText = result;
+    } catch (error) {
+        resultBox.innerText = 'Error';
+    }
+    return false;
 }
 </script>
