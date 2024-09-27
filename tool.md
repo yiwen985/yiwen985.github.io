@@ -60,6 +60,19 @@ sitemap: false
     <div class="result" id="calculateTransferTime_result"></div>
 </div>
 
+## 电费计算
+
+<div class="container">
+    <form id="electricity_bill-form" onsubmit="return electricity_bill()">
+        <label for="power">功率(W):</label>
+        <input type="number" id="power" placeholder="输入功率">
+        <label for="electricity_price">电价(元):</label>
+        <input type="number" id="electricity_price" value="0.75">
+        <button onclick="electricity_bill()">计算电费</button>
+    </form>
+    <div class="result" id="electricity_bill_result"></div>
+</div>
+
 ## 计算器
 
 参考 [math.js](https://mathjs.org/)，例如：
@@ -75,7 +88,7 @@ sitemap: false
     <div class="result" id="calculate_result"></div>
 </div>
 
-
+<!-- 数据传输计算器 -->
 <script>
 function calculateTransferTime() {
     var fileSize = document.getElementById('fileSize').value;
@@ -103,6 +116,36 @@ function calculateTransferTime() {
             transferTimeInSeconds.toFixed(1) + ' 秒';
     } else {
         document.getElementById('calculateTransferTime_result').innerHTML = '请填写所有字段。';
+    }
+    return false;
+}
+</script>
+
+<!-- 电费计算 -->
+<script>
+function electricity_bill() {
+    var power = document.getElementById('power').value;
+    var electricity_price = document.getElementById('electricity_price').value;
+    // var bandwidth = document.getElementById('bandwidth').value;
+
+    if (power && electricity_price) {
+        const day_hours = 24;
+        const mounth_hours = 24 * 30;
+        const year_hours = 24 * 365;
+
+        var electricity_bill_in_hours = power * 1 * electricity_price / 1000;
+        var electricity_bill_in_days = power * day_hours * electricity_price / 1000;
+        var electricity_bill_in_mounths = power * mounth_hours * electricity_price / 1000;
+        var electricity_bill_in_years = power * year_hours * electricity_price / 1000;
+
+        document.getElementById('electricity_bill_result').innerHTML = 
+            '电费: <br>' + 
+            electricity_bill_in_hours + ' 元/时 <br>' + 
+            electricity_bill_in_days.toFixed(1) + ' 元/天<br>' + 
+            electricity_bill_in_mounths.toFixed(1) + ' 元/月<br>' + 
+            electricity_bill_in_years.toFixed(1) + ' 元/年';
+    } else {
+        document.getElementById('electricity_bill_result').innerHTML = '请填写所有字段。';
     }
     return false;
 }
