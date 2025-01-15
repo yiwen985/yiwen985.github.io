@@ -1,186 +1,114 @@
-title: 学的是思想|用的是工具
-author:
-  name: cliter
-  email: your-email@domain.com
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
-# The `>` after `description:` means to ignore line-breaks until next key.
-# If you want to omit the line-break after the end of text, use `>-` instead.
-description: >
-  Write an awesome description for your new site here. You can edit this line
-  in _config.yml. It will appear in your document head meta (for Google search
-  results) and in your feed.xml site description.
+# Site
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: yiwen985
+# language: en
+language: zh-CN
+timezone: ''
 
-# Build settings
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: http://example.com
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
-# If you clone the Minima repo and build locally, use this setting.
-theme: minima
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
-# As of November 2023, GitHub Pages still uses Minima 2.5.1 (https://pages.github.com/versions/). 
-# If you want to use the latest Minima version on GitHub Pages, use the following setting and 
-# add a line comment on "theme: minima" above.
-#remote_theme: jekyll/minima
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-toc
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-spaceship
-  - jekyll-archives
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
 
-# Theme-specific settings
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
 
-# If you want to link only specific pages in your header, use this and add the path to the pages
-# in order as they should show up.
-header_pages:
-  - search.md
-  - archive.md
-  - tool.md
-  - about.md
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
-# Set to `true` to show excerpts on the homepage.
-#show_excerpts: false
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
-# Minima specific settings, which are only available from Minima 3.0 onward.
-minima:
-  # Minima skin selection.
-  # Available skins are:
-  # classic	           Default, light color scheme.
-  # dark	             Dark variant of the classic skin.
-  # auto	             Adaptive skin based on the default classic and dark skins.
-  # solarized-light	   Light variant of solarized color scheme.
-  # solarized-dark	   Dark variant of solarized color scheme.
-  # solarized	         Adaptive skin for solarized color scheme skins.
-  skin: auto
-  
-  # Minima date format.
-  # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
-  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
-  date_format: "%Y-%m-%d"
-  
-  # Generate social links in footer.
-  social_links:
-  #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
-  #  - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
-  #  - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
-  #  - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
-    - { platform: github,         user_url: "https://github.com/yiwen985/yiwen985.github.io" }
-  #  - { platform: gitlab,         user_url: "https://gitlab.com/jekyll" }
-  #  - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
-  #  - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
-  #  - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
-  #  - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
-  #  - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
-  #  - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
-  #  - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
-  #  - { platform: telegram,       user_url: "https://t.me/jekyll" }
-  #  - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
-  #  - { platform: x,              user_url: "https://x.com/jekyllrb" }
-  #  - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
 
-timezone: Asia/Shanghai
-google_analytics: G-73TYVMVJRZ
-disqus:
-  shortname: yiwen985
-show_excerpts: true # 显示摘要
-permalink: /:title
-paginate: 5
-# paginate_path: "/page:num/"
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
 
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
-    values:
-      layout: "post"
-      toc: false # 默认关目录
-      comments: true
-      sticky: false
-      auto-number-title: true
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+# theme: landscape
+theme: solitude
 
-kramdown:
-  input: GFM
-  hard_wrap: true # 不拼接相邻行
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: ''
 
-# Where things are
-jekyll-spaceship:
-  # default enabled processors
-  processors:
-    - table-processor
-    - mathjax-processor
-    - plantuml-processor
-    - mermaid-processor
-    - polyfill-processor
-    - media-processor
-    - emoji-processor
-    - element-processor
-  mathjax-processor:
-    src:
-      - https://polyfill.io/v3/polyfill.min.js?features=es6
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    config:
-      tex:
-        inlineMath:
-          - ['$','$']
-          - ['\(','\)']
-        displayMath:
-          - ['$$','$$']
-          - ['\[','\]']
-      svg:
-        fontCache: 'global'
-    optimize: # optimization on building stage to check and add mathjax scripts
-      enabled: true # value `false` for adding to all pages
-      include: []   # include patterns for math expressions checking (regexp)
-      exclude: []   # exclude patterns for math expressions checking (regexp)
-  plantuml-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-    css:
-      class: plantuml
-    syntax:
-      code: 'plantuml!'
-      custom: ['@startuml', '@enduml']
-    src: http://www.plantuml.com/plantuml/svg/
-  mermaid-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-    css:
-      class: mermaid
-    syntax:
-      code: 'mermaid!'
-      custom: ['@startmermaid', '@endmermaid']
-    config:
-      theme: default
-    src: https://mermaid.ink/svg/
-  media-processor:
-    default:
-      id: 'media-{id}'
-      class: 'media'
-      width: '100%'
-      height: 350
-      frameborder: 0
-      style: 'max-width: 600px; outline: none;'
-      allow: 'encrypted-media; picture-in-picture'
-  emoji-processor:
-    css:
-      class: emoji
-    src: https://github.githubassets.com/images/icons/emoji/
-
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: archive
-    tag: archive
-  permalinks:
-    tag: '/tag/:name/'
-    category: '/category/:name/'
-
-# 创建文章：jekyll post 文章名
-jekyll_compose:
-  default_front_matter:
-    posts:
-      layout: "post"
-      categories: "技术"
-      excerpt: 摘要
+# 自定义
+# 搜索
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: striptags
