@@ -2,8 +2,9 @@
 title: rsshub及阅读器部署
 date: 2024-09-10
 updated: 2024-09-19
-categories: 技术
+categories: 工具
 excerpt: 可部署在国内
+cover: https://i1.hdslb.com/bfs/archive/b182250fd6a763ae428a08c10b8b51d01f55ca9e.jpg
 ---
 
 ## rsshub miniflux 一键部署
@@ -74,3 +75,6 @@ rsshub_browserless_1     94.52MiB / 3.79GiB
 参考配置 [rsstt-docker-compose.yml](/download_files/rsstt-docker-compose.yml)
 rsshub 浏览器扩展需修改实例为 `http://rsshub:1200`
 我的 rss 机器人：[@rss_yiwen985_bot](https://t.me/rss_yiwen985_bot)
+
+
+封面出处: [咕咕乔233-哔哩哔哩](https://www.bilibili.com/video/BV1VR4y1g7qm)

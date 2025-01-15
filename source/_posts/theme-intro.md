@@ -1,6 +1,8 @@
 ---
 title: 主题简介
 date: 2025-01-15 22:34
+cover: https://i0.hdslb.com/bfs/archive/de2db520d56718d90c9fc839c20a33b643183326.jpg
+categories: 工具
 ---
 
 ## 介绍
@@ -60,7 +62,7 @@ title Key elements in Product X
 <!-- tab chart -->
 
 <script>
-const data = [
+const chart_example_data = [
     { year: 2010, count: 10 },
     { year: 2011, count: 20 },
     { year: 2012, count: 15 },
@@ -73,11 +75,11 @@ const data = [
 {% chart %}
 type: 'bar',
 data: {
-    labels: data.map(row => row.year),
+    labels: chart_example_data.map(row => row.year),
     datasets: [
         {
             label: 'Acquisitions by year',
-            data: data.map(row => row.count)
+            data: chart_example_data.map(row => row.count)
         }
     ]
 }
@@ -85,7 +87,7 @@ data: {
 
 ```markdown
 <script>
-const data = [
+const chart_example_data = [
     { year: 2010, count: 10 },
     { year: 2011, count: 20 },
     { year: 2012, count: 15 },
@@ -98,11 +100,11 @@ const data = [
 {% chart %}
 type: 'bar',
 data: {
-    labels: data.map(row => row.year),
+    labels: chart_example_data.map(row => row.year),
     datasets: [
         {
             label: 'Acquisitions by year',
-            data: data.map(row => row.count)
+            data: chart_example_data.map(row => row.count)
         }
     ]
 }
@@ -195,3 +197,4 @@ search:
 
 
 
+封面出处: [伍十七啊-哔哩哔哩](https://www.bilibili.com/video/BV1B9W6eaEX1)

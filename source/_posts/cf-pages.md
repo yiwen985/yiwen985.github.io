@@ -1,9 +1,10 @@
 ---
 title: cloudflare pages 部署 minima 报错 invalid byte sequence in US-ASCII
-categories: 技术
+categories: 工具
 date: 2024-08-25
 updated: 2024-08-28
 excerpt: 修改文件报错部分即可
+cover: https://i0.hdslb.com/bfs/archive/f37d2763f03dc083ba02eb30919ccccc9c4606c0.jpg
 ---
 
 报错信息如下：
@@ -58,3 +59,5 @@ end
 
 [^1]: https://jekyllrb.com/docs/configuration/environments/
 [^2]: https://community.cloudflare.com/t/no-bun-support-how/554291
+
+封面出处: [葉玖洛-哔哩哔哩](https://www.bilibili.com/video/BV1Sp4y157br)

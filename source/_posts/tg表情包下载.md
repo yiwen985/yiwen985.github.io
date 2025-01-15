@@ -1,9 +1,10 @@
 ---
 title: telegram sticker 表情包下载
-categories: 技术
+categories: 工具
 date: 2024-07-31
 updated: 2024-09-06
 excerpt: python 脚本输入 tg 表情包链接下载
+cover: https://i2.hdslb.com/bfs/archive/ea8df9aa9a93e1e1223167a02b6e1fd21127cee1.jpg
 ---
 
 github: [sticker-convert](https://github.com/laggykiller/sticker-convert)
@@ -87,3 +88,5 @@ token 获取：[@botfarther](https://t.me/botfather) 新建机器人获取
 安卓：https://t.me/ayugramfcm
 webm转gif：https://cloudconvert.com/
 > 注意：gif的体积会大很多
+
+封面出处: [KyleLin1998-哔哩哔哩](https://www.bilibili.com/video/BV1tAb1e6EdH)

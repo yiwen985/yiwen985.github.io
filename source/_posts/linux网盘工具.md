@@ -3,8 +3,9 @@ layout: post
 title: linux网盘工具
 date: 2024-09-02
 updated: 2024-09-02
-categories: 技术
+categories: 工具
 excerpt: linux 挂载网盘的一些工具，以及网盘推荐
+cover: https://i1.hdslb.com/bfs/archive/fd103e0131c79f81b9a4a91c9a8ac9b966a74c70.jpg
 ---
 
 网盘之间互传文件：alist
@@ -48,3 +49,5 @@ root:~# du -d 1 -h /var/log
 journalctl --vacuum-time=2d
 journalctl --vacuum-size=500M
 ```
+
+封面出处: [AI笔记本-哔哩哔哩](https://www.bilibili.com/video/BV1yV411k7CB)

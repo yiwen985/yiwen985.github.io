@@ -145,13 +145,13 @@ aside:
       night: 早点休息
       goodnight: 晚安 😴
     witty_words:
-      # - 你可以的
-      # - 你一定可以的
-      # - 祝你好运，陌生人
+      - 你可以的
+      - 你一定可以的
+      - 祝你好运，陌生人
     # social
     # 社交信息图标
     information:
-    #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
+      Github: https://github.com/yiwen985/yiwen985.github.io || fab fa-github # Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
   # --------------------------- end ---------------------------
 
@@ -251,7 +251,7 @@ post:
   default:
     # The cover of the article is displayed
     # 文章封面显示
-    top_cover: false
+    top_cover: true
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -355,7 +355,8 @@ post:
 # --------------------------- start ---------------------------
 # Custom Theme Color
 theme_color:
-  dark: "#ffc848" # dark
+  # dark: "#ffc848" # dark
+  dark: "#8eaccd" # dark
   light: "#425AEF" # light
 # --------------------------- end ---------------------------
 
@@ -368,7 +369,7 @@ display_mode:
   type: auto
   # After opening, the dark mode will display the starry sky background
   # 开启后深色模式会显示星空背景
-  universe: false
+  universe: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
