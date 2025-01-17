@@ -785,6 +785,7 @@ extends:
   # 插入到 head
   head:
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+    - <meta name="referrer" content="no-referrer">
 
   # Insert in body
   # 插入到 body
