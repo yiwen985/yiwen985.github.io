@@ -10,6 +10,7 @@ hexo.extend.filter.register('before_post_render', function(data) {
     for (const [localLink, cdnLink] of Object.entries(linkMap)) {
         if(cdnLink === '') continue;
         const regex = new RegExp(localLink, 'g');
+        data.cover = data.cover.replace(regex, cdnLink);
         data.content = data.content.replace(regex, cdnLink);
         // console.log(localLink, cdnLink);
     }
