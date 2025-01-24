@@ -1,6 +1,7 @@
 ---
 title: windows
 date: 2025-01-18
+updated: 2025-01-25
 categories: 工具
 cover: https://pub-c2c1d9230f0b4abb9b0d2d95e06fd4ef.r2.dev/sites/620/2021/09/Hero-Bloom-Logo-800x533.jpg
 ---
@@ -19,6 +20,16 @@ winget install CodecGuide.K-LiteCodecPack.Standard
 
 ### 用键盘代替鼠标
 控制面板地址栏输入 `控制面板\轻松使用` - 更改键盘的工作方式 - 启用鼠标键(M)，设置鼠标键(Y)。数字键盘上的`/`让`5`在左右键间切换。[出处](https://zh.wikihow.com/%E7%94%A8%E9%94%AE%E7%9B%98%E6%9D%A5%E4%BB%A3%E6%9B%BF%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB)
+
+---
+
+### 为没有扩展名的文件设置默认打开程序
+
+1. 新建文件 test.3ab
+2. 右键-打开方式-选择默认程序
+3. 打开注册表编辑器（regedit）
+4. `HKEY_CLASSES_ROOT\.3ab` 重命名为 `.`
+5. `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.3ab` 重命名为 `.`
 
 ---
 
